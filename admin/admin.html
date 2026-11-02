@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Mi Negocio</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div id="loginView" class="panel login-panel">
+        <h1>Panel administrativo</h1>
+        <p>Inicia sesión con el correo autorizado.</p>
+        <form id="loginForm" class="form-grid">
+          <label>
+            Correo
+            <input id="email" type="email" required placeholder="admin@tu-negocio.com" />
+          </label>
+          <label>
+            Contraseña
+            <input id="password" type="password" required placeholder="••••••••" />
+          </label>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+      </div>
+
+      <div id="adminView" class="panel hidden">
+        <div class="header-row">
+          <div>
+            <p class="eyebrow">Administración</p>
+            <h2>Productos</h2>
+          </div>
+          <button id="logoutBtn" class="btn btn-secondary">Cerrar sesión</button>
+        </div>
+
+        <form id="productForm" class="form-grid product-form">
+          <input id="productId" type="hidden" />
+
+          <label>
+            Nombre
+            <input id="name" required placeholder="Nombre del producto" />
+          </label>
+
+          <label>
+            Categoría
+            <select id="category">
+              <option value="belleza">Belleza</option>
+              <option value="hogar">Hogar</option>
+              <option value="comida">Comida</option>
+              <option value="servicios">Servicios</option>
+            </select>
+          </label>
+
+          <label>
+            Precio
+            <input id="price" type="number" min="0" step="1" required value="0" />
+          </label>
+
+          <label>
+            Tipo de venta
+            <select id="unit">
+              <option value="unidad">Unidad</option>
+              <option value="pedido">Pedido</option>
+              <option value="cotizar">Cotizar</option>
+            </select>
+          </label>
+
+          <label class="full-width">
+            Descripción
+            <textarea id="description" rows="3" required placeholder="Describe el producto"></textarea>
+          </label>
+
+          <label class="full-width">
+            Imagen URL
+            <input id="image" type="url" placeholder="https://..." />
+          </label>
+
+          <div class="actions full-width">
+            <button type="submit" class="btn btn-primary">Guardar producto</button>
+            <button type="button" id="resetBtn" class="btn btn-secondary">Limpiar</button>
+          </div>
+        </form>
+
+        <div class="table-wrap">
+          <div class="list-toolbar">
+            <input id="searchInput" type="search" placeholder="Buscar producto..." />
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

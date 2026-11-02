@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Negocio | Catálogo</title>
+    <meta
+      name="description"
+      content="Catálogo digital de productos y servicios para tu negocio."
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/products-loader.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <strong>Mi Negocio</strong>
+            <span>Productos y servicios</span>
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#catalogo">Catálogo</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeToggle" class="btn btn-light" aria-label="Cambiar tema">🌙</button>
+          <button id="cartButton" class="btn btn-primary">Carrito <span id="cartCount">0</span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Lo que tu cliente necesita</span>
+            <h1>Productos y servicios para vender con estilo.</h1>
+            <p>
+              Una web rápida, moderna y fácil de usar para mostrar tu catálogo,
+              atender pedidos y cerrar ventas por WhatsApp.
+            </p>
+            <div class="hero-actions">
+              <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+              <a href="#contacto" class="btn btn-secondary">Contacto</a>
+            </div>
+            <ul class="hero-points">
+              <li>Entrega rápida</li>
+              <li>Precios claros</li>
+              <li>Pedido por WhatsApp</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="badge">Lo más vendido</div>
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Producto destacado" />
+            <div class="hero-card-info">
+              <h3>Combo especial</h3>
+              <p>Productos premium con atención personalizada.</p>
+              <strong>Desde $150</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-strip">
+        <div class="container promo-grid">
+          <div>🚚 Entregas a domicilio</div>
+          <div>💬 Atención rápida por WhatsApp</div>
+          <div>⭐ Calidad garantizada</div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="catalog">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">Catálogo</span>
+            <h2>Productos destacados</h2>
+          </div>
+
+          <div id="pills" class="pills" aria-label="Categorías de productos"></div>
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </section>
+
+      <section id="servicios" class="services">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">Servicios</span>
+            <h2>Soluciones para tu negocio</h2>
+          </div>
+          <div id="servicesGrid" class="services-grid"></div>
+        </div>
+      </section>
+
+      <section id="nosotros" class="about">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=80" alt="Nosotros" />
+          </div>
+          <div class="about-copy">
+            <span class="eyebrow">Sobre nosotros</span>
+            <h2>Más que una tienda, una experiencia de compra clara y rápida.</h2>
+            <p>
+              Ofrecemos soluciones prácticas, accesibles y de calidad para que cada cliente
+              encuentre lo que necesita sin complicaciones.
+            </p>
+            <div class="stats">
+              <div>
+                <strong>+500</strong>
+                <span>Clientes</span>
+              </div>
+              <div>
+                <strong>3 años</strong>
+                <span>Experiencia</span>
+              </div>
+              <div>
+                <strong>24/7</strong>
+                <span>Atención</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="contact">
+        <div class="container contact-grid">
+          <div>
+            <span class="eyebrow">Contacto</span>
+            <h2>Estamos para ayudarte</h2>
+            <p>Solicita información, cotiza un pedido o conoce más sobre nosotros.</p>
+            <ul class="contact-list">
+              <li>📍 Calle Principal #123, Ciudad</li>
+              <li>🕒 Lunes a Sábado: 8:00am - 7:00pm</li>
+              <li>📱 WhatsApp: +52 123 456 7890</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Solicitar información</h3>
+            <a class="btn btn-primary full" href="https://wa.me/521234567890?text=Hola%2C%20quiero%20más%20información%20sobre%20sus%20productos." target="_blank" rel="noopener">
+              Chatear por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside id="cartDrawer" class="cart-drawer" aria-label="Carrito">
+      <div class="cart-header">
+        <h3>Tu carrito</h3>
+        <button id="closeCart" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+      </div>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button id="checkoutBtn" class="btn btn-primary full">Continuar pedido</button>
+      </div>
+    </aside>
+
+    <div id="orderModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>Finalizar pedido</h3>
+          <button id="closeModal" class="icon-btn" aria-label="Cerrar modal">✕</button>
+        </div>
+
+        <form id="orderForm">
+          <div class="field-grid">
+            <label>
+              Nombre
+              <input type="text" name="nombre" required placeholder="Tu nombre" />
+            </label>
+            <label>
+              Teléfono
+              <input type="tel" name="telefono" required placeholder="Tu teléfono" />
+            </label>
+          </div>
+
+          <label>
+            Dirección / lugar de entrega
+            <input type="text" name="direccion" placeholder="Dirección o referencia" />
+          </label>
+
+          <label>
+            Fecha de entrega
+            <input type="date" name="fecha" />
+          </label>
+
+          <label>
+            Observaciones
+            <textarea name="observaciones" rows="4" placeholder="Detalles, cantidad, etc."></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary full">Enviar pedido por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js").catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

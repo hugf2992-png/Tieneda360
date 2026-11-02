@@ -1,0 +1,16 @@
+{
+  "name": "Mi Negocio",
+  "short_name": "MiNegocio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#ff6b35",
+  "description": "Catálogo de productos y servicios del negocio.",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
